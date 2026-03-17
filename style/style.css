@@ -1,0 +1,271 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-background: #021526;
+  --primary: #478fc7;
+  --primary-darkest: #6eacda;
+  --secondary: #8d8d8d;
+  --secondary-active: #d1d1d1;
+  --shadow-color: #8d8d8d;
+  --color: #e6e6e6;
+  color: #959fac;
+  background: var(--main-background);
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  justify-content: space-between;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+p {
+  font-size: 26px;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+i {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 44px;
+}
+
+.to-up {
+  position: fixed;
+  padding: 15px;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  transition: .2s all;
+}
+.to-up:hover {
+  scale: 1.1;
+  background: var(--primary-darkest);
+}
+.to-up:active {
+  scale: .98;
+  background: var(--primary-darkest);
+}
+
+button,
+.button {
+  background: var(--primary);
+  color: var(--color);
+  border: none;
+  width: 150px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: 0.2s;
+  cursor: pointer;
+  text-align: center;
+  /* box-shadow: 2px 2px 8px var(--shadow-color); */
+}
+button:hover,
+.button:hover {
+  background: var(--primary-darkest);
+}
+button:active,
+.button:active {
+  scale: 0.98;
+}
+
+.button-secondary {
+  background: transparent;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+}
+.button-secondary:hover {
+  background: transparent;
+  color: var(--secondary-active);
+  border-color: var(--secondary-active);
+}
+
+/* header {
+  position: fixed;
+} */
+
+header,
+footer {
+  width: 100%;
+  padding-inline: 50px;
+  padding-block: 10px;
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--main-background);
+  border-bottom: 1px solid var(--secondary);
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+nav > a {
+  transition: 0.2s;
+  cursor: pointer;
+}
+nav > a:hover {
+  color: var(--secondary-active);
+  text-decoration: underline;
+}
+nav > a:active {
+  color: var(--secondary-active);
+  scale: 0.98;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* height: 84vh; */
+}
+
+section {
+  /* background: #3a5464; */
+  height: 100vh;
+  padding-block: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  padding: 20px;
+  background: var(--main-background);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  /* gap: 50px; */
+}
+
+.block {
+  min-width: 400px;
+  width: 45%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.home-info {
+  justify-content: space-around;
+}
+
+.img {
+  justify-content: center;
+  align-items: center;
+}
+.img > img {
+  width: 50%;
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+/* #home {
+  height: 84vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.wrapper {
+  width: 50%;
+  padding-block: 20px;
+  padding-inline: 50px;
+  display: flex;
+  gap: 100px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+} */
+
+#about,
+#skills {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "main img"
+    "footer footer";
+  grid-template-columns: minmax(55vw, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  padding: 50px;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* align-content: center; */
+  /* justify-items: center; */
+}
+
+/* #about > div {
+  /* background: red; */
+/* padding: 20px; */
+/* } */
+
+.header-item {
+  grid-area: header;
+
+  background: greenyellow;
+}
+
+.main-item {
+  grid-area: main;
+  /* width: 60%; */
+
+  background: yellow;
+}
+.img-item {
+  grid-area: img;
+  width: fit-content;
+  height: fit-content;
+
+  background: moccasin;
+}
+.footer-item {
+  grid-area: footer;
+  justify-items: center;
+
+  background: rebeccapurple;
+}
+
+.footer-item > div {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+}
