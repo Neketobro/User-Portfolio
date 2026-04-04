@@ -53,16 +53,50 @@
       <section id="about">
         <h1>About</h1>
 
-        <div class="carousel">
-          <button class="carousel-left">Left</button>
-          <div class="carousel-wrapper">
-            <div class="bordered-div" active”>text</div>
-            <div class="bordered-div">text</div>
-            <div class="bordered-div">text</div>
-            <div class="bordered-div">text</div>
+        <div class="carousel" id="carousel">
+          <button class="carousel-button" id="prev-btn" data-prev-btn>
+            <i class="bi bi-caret-left-fill"></i>
+          </button>
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <div class="carousel-card bordered-div active">
+                I am a Frontend Developer with a systematic technical mindset
+                and hands-on experience building full-featured SPA applications.
+              </div>
+              <div class="carousel-card bordered-div">
+                My core expertise lies within the React ecosystem:
+                component-driven architecture, state management, JWT-based
+                authentication, REST API integration, performance optimization,
+                and structured project organization.
+              </div>
+              <div class="carousel-card bordered-div">
+                I have built a mini social network application featuring
+                authentication, user subscriptions, and backend logic
+                implemented with Node.js and JSON-based data storage. I also
+                implemented real-time communication using WebSocket connections.
+              </div>
+              <div class="carousel-card bordered-div">
+                Before transitioning into IT, I worked in automotive mechanics
+                and technical repair. This background shaped my analytical and
+                systematic approach: every complex system can be broken down
+                into logical components. I apply the same principle in software
+                development.
+              </div>
+              <div class="carousel-card bordered-div">
+                I focus on: <br />
+                <ul>
+                  <li>scalable architecture</li>
+                  <li>maintainable codebase</li>
+                  <li>performance optimization</li>
+                  <li>clean and predictable logic</li>
+                </ul>
+              </div>
+            </div>
           </div>
 
-          <button class="carousel-right">Right</button>
+          <button class="carousel-button" id="next-btn" data-next-btn>
+            <i class="bi bi-caret-right-fill"></i>
+          </button>
         </div>
 
         <div class="progress-carousel"></div>
@@ -81,5 +115,7 @@
       <p>website created by NSevtsov</p>
       <p>My social</p>
     </footer>
+
+    <script src="./src/index.js"></script>
   </body>
 </html>

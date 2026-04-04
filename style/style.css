@@ -8,7 +8,7 @@
   --main-background: #191d3a;
   --primary: #4550d2;
   --primary-darkest: #2d369b;
-  --secondary: #5a5fbf;
+  --secondary: #8386a3;
   --secondary-active: #6c72ec;
   --color: #e6e6e6;
   --color-secondary: #8386a3;
@@ -106,13 +106,10 @@ button:active,
   align-items: center;
   padding: 10px;
   background: var(--main-background);
-  box-shadow: -30px 30px var(--secondary);
-
-  /* border-radius: 15px; */
+  box-shadow: -30px 30px var(--primary);
 }
 .img > img {
   width: 25vw;
-  /* border-radius: 10px; */
 }
 
 /* MAIN */
@@ -169,7 +166,7 @@ section {
   padding-block: 20px;
   padding-inline: 15vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -187,6 +184,7 @@ section {
   display: flex;
   gap: 20px;
 }
+
 .bordered-div {
   position: relative;
   width: fit-content;
@@ -199,8 +197,8 @@ section {
   position: absolute;
   top: 0;
   left: 0;
-  width: 150px;
-  height: 50px;
+  width: 15vw;
+  height: 5vh;
   border-top: 4px solid var(--primary);
   border-left: 4px solid var(--primary);
 }
@@ -210,8 +208,8 @@ section {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 150px;
-  height: 50px;
+  width: 15vw;
+  height: 5vh;
   border-bottom: 4px solid var(--primary);
   border-right: 4px solid var(--primary);
 }
@@ -224,6 +222,83 @@ section {
   justify-content: space-around;
 }
 
+#about {
+  flex-direction: column;
+}
+
+.carousel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  gap: 20px;
+}
+
+.carousel-button {
+  width: fit-content;
+  padding: 5px;
+  height: 300px;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+.carousel-track {
+  display: flex;
+  gap: 10px;
+  will-change: transform;
+}
+.carousel-card {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  width: clamp(200px, 60vw, 400px);
+  height: clamp(400px, 50vw, 400px);
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+  opacity: 0.5;
+  transform: scale(0.8);
+  letter-spacing: 2px;
+}
+
+.carousel-card::before,
+.carousel-card::after {
+  border-color: var(--secondary);
+}
+
+.active,
+.active::before,
+.active::after {
+  transform: scale(1);
+  border-color: var(--primary);
+  color: var(--color);
+  opacity: 1;
+}
+
+.progress-carousel {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.progress-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--secondary);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.progress-dot.active {
+  background: var(--primary);
+}
+
 @media (width <= 800px) {
   header,
   footer {
@@ -234,14 +309,14 @@ section {
     align-items: center;
     justify-content: center;
   }
-  .burger-menu>i:active {
+  .burger-menu > i:active {
     transform: rotate(90deg);
-    transition: .5s all;
+    transition: 0.5s all;
   }
   .nav-action {
     display: none;
   }
-  /* Додавання адаптації для мобільних */
+
   section {
     padding-inline: 20px;
     flex-direction: column;
@@ -265,5 +340,19 @@ section {
 
   .action {
     justify-content: center;
+  }
+
+  .carousel {
+    gap: 10px;
+  }
+
+  .carousel-card {
+    flex-shrink: 0;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .carousel-button {
+    padding: 2px;
   }
 }
