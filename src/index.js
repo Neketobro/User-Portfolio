@@ -94,7 +94,7 @@ function createDots() {
 
     dot.addEventListener("click", () => {
       if (isAnimating) return;
-      index = i + cards.length; // центр
+      index = i + cards.length;
       moveTo(index);
     });
 
@@ -114,7 +114,7 @@ function init() {
   setupInfinite();
   createDots();
 
-  index = cards.length; // старт з центру
+  index = cards.length;
 
   updateSizes();
 }

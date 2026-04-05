@@ -31,7 +31,10 @@ a {
   color: #fff;
   text-decoration: none;
 }
-
+h1 {
+  text-align: center;
+  letter-spacing: 2px;
+}
 p,
 h2 {
   color: var(--color-secondary);
@@ -43,10 +46,10 @@ i {
 
 .to-up {
   position: fixed;
-  padding: 10px;
+  padding: 8px;
   bottom: 20px;
   right: 20px;
-  border-radius: 50px;
+  border-radius: 50%;
   background: var(--primary);
   cursor: pointer;
   transition: 0.3s all;
@@ -112,6 +115,12 @@ button:active,
   width: 25vw;
 }
 
+.subtitle {
+  align-items: center;
+  font-size: 16px;
+  color: var(--secondary);
+}
+
 /* MAIN */
 
 header,
@@ -126,6 +135,12 @@ footer {
   justify-content: space-between;
   gap: 20px;
   background: #22264a;
+}
+
+header {
+  position: sticky;
+  top: 0px;
+  z-index: 1;
 }
 
 .nav-action {
@@ -166,6 +181,7 @@ section {
   padding-block: 20px;
   padding-inline: 15vw;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
@@ -222,9 +238,10 @@ section {
   justify-content: space-around;
 }
 
-#about {
+/* #about,
+#skills {
   flex-direction: column;
-}
+} */
 
 .carousel {
   display: flex;
@@ -292,11 +309,83 @@ section {
   border-radius: 50%;
   background: var(--secondary);
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s;
 }
 
 .progress-dot.active {
   background: var(--primary);
+}
+
+.skills-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.skills-wrapper {
+  display: flex;
+  padding-inline: 10vw;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3vw;
+}
+
+.skills-item {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 30px;
+  padding-block: 40px;
+  gap: 20px;
+}
+
+.skills-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5vw;
+  height: 5vh;
+  border-top: 4px solid var(--primary);
+  border-left: 4px solid var(--primary);
+}
+
+.skills-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 5vw;
+  height: 5vh;
+  border-bottom: 4px solid var(--primary);
+  border-right: 4px solid var(--primary);
+}
+
+.skills-item>img {
+  box-shadow: 0px 0px 30px 5px var(--primary-darkest);
+}
+
+.portfolio-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.portfolio-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+
+  padding: 50px;
 }
 
 @media (width <= 800px) {
@@ -318,7 +407,7 @@ section {
   }
 
   section {
-    padding-inline: 20px;
+    padding-inline: 10px;
     flex-direction: column;
     height: auto;
     padding-inline: 5vw;
@@ -354,5 +443,10 @@ section {
 
   .carousel-button {
     padding: 2px;
+  }
+
+  .skills-wrapper {
+    gap: 20px;
+    padding: 0;
   }
 }
