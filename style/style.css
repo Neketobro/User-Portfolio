@@ -41,7 +41,7 @@ h1 {
   letter-spacing: 2px;
 }
 p,
-h2 {
+h3 {
   color: var(--color-secondary);
   text-align: justify;
 }
@@ -385,7 +385,52 @@ section {
   gap: 50px;
 }
 
+.contact-wrapper {
+  display: flex;
+  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+  gap: 100px;
+}
+
+.contact-wrapper>div {
+  width: 30vw;
+  min-width: 350px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+
+input, textarea{
+  width: 350px;
+  padding: 15px;
+  max-height: 200px;
+  min-height: 50px;
+  height: 50px;
+  border: 2px solid var(--secondary);
+  background: transparent;
+  border-radius: 5px;
+  color: var(--color);
+  font-family: sans-serif;
+  font-size: 14px;
+
+  resize: vertical;
+}
+
 @media (width <= 800px) {
+  h2 {
+    text-align: center;
+  }
   header,
   footer {
     padding-inline: 20px;
@@ -449,5 +494,8 @@ section {
 
   .portfolio-item {
     gap: 20px;
+  }
+  .contact-wrapper>div {
+    align-items: center;
   }
 }

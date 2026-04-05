@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
-    <title>User Portfolio</title>
+    <title>Mykyta Shevtsov - Frontend Developer Portfolio</title>
   </head>
   <body>
     <header>
@@ -29,12 +29,15 @@
     <main>
       <section id="home">
         <div class="img">
-          <img alt="Photo" src="./assets/images/IMG_9095.JPG" />
+          <img
+            alt="Mykyta Shevtsov portrait"
+            src="./assets/images/IMG_9095.JPG"
+          />
         </div>
         <div class="wrapper">
-          <h2>SHEVTSOV MYKYTA</h2>
+          <h3>SHEVTSOV MYKYTA</h3>
           <div class="bordered-div">
-            <h1>Frontend Developer | React</h1>
+            <h2>Frontend Developer | React</h2>
           </div>
           <p>
             I build scalable web applications with clean architecture,
@@ -51,7 +54,7 @@
       </section>
 
       <section id="about">
-        <h1>ABOUT</h1>
+        <h2>ABOUT</h2>
 
         <div class="carousel" id="carousel">
           <button class="carousel-button" id="prev-btn" data-prev-btn>
@@ -103,7 +106,7 @@
       </section>
 
       <section id="skills">
-        <h1>SKILLS</h1>
+        <h2>SKILLS</h2>
 
         <div class="skills-block">
           <div>
@@ -119,7 +122,7 @@
               <p>CSS</p>
             </div>
             <div class="skills-item">
-              <img src="./assets/icons/js.png" alt="js" />
+              <img src="./assets/icons/js.png" alt="java script" />
               <p>JavaScript</p>
             </div>
             <div class="skills-item">
@@ -180,7 +183,7 @@
       </section>
 
       <section id="portfolio">
-        <h1>MY PROJECTS</h1>
+        <h2>MY PROJECTS</h2>
         <div class="portfolio-wrapper">
           <div class="portfolio-item">
             <div class="bordered-div">
@@ -244,10 +247,64 @@
             >
           </div>
         </div>
-        <p>View all projects on <a class="link" href="https://github.com/Neketobro">GitHub</a></p>
+        <p>
+          View all projects on
+          <a class="link" href="https://github.com/Neketobro">GitHub</a>
+        </p>
       </section>
       <section id="contact">
-        <h1>CONTACT</h1>
+        <h2>CONTACT</h2>
+
+        <div class="contact-wrapper">
+          <div>
+            <form action="">
+              <label for="username">Name</label>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                maxlength="15"
+                id="username"
+                name="username"
+              />
+
+              <label for="email">Email</label>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                id="email"
+                name="email"
+              />
+
+              <label for="description">Description</label>
+
+              <textarea
+                id="description"
+                name="description"
+                rows="5"
+                placeholder="Enter description"
+              ></textarea>
+
+              <button>Submit</button>
+            </form>
+          </div>
+          <div>
+            <div class="bordered-div">
+              <h2>
+                I'm open to new opportunities, collaborations, and interesting
+                projects.
+              </h2>
+            </div>
+            <p>
+              If you have an idea, a task, or a proposal — let's discuss it.
+            </p>
+            <p>
+              I'm always open to professional communication — whether it's
+              freelance work, a full-time position, or team collaboration.
+            </p>
+            <h4>youremail@gmail.com</h4>
+            <h4>+3800990009900</h4>
+          </div>
+        </div>
       </section>
 
       <a href="#" class="to-up">
