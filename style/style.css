@@ -6,6 +6,7 @@
 
 :root {
   --main-background: #191d3a;
+  --secondary-background: #22264a;
   --primary: #4550d2;
   --primary-darkest: #2d369b;
   --secondary: #8386a3;
@@ -50,24 +51,35 @@ i {
   font-size: 32px;
 }
 
-.to-up {
+#scrollTopBtn {
   position: fixed;
-  padding: 8px;
-  bottom: 20px;
-  right: 20px;
+  bottom: 30px;
+  right: 30px;
+
+  padding: 10px;
+
+  border: none;
   border-radius: 50%;
   background: var(--primary);
+  color: var(--color);
+  font-size: 20px;
+
   cursor: pointer;
-  transition: 0.3s all;
-}
-.to-up:hover {
-  background: var(--primary-darkest);
-}
-.to-up:active {
-  background: var(--primary-darkest);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
 }
 
-/* BUTTONS */
+#scrollTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scrollTopBtn:hover,
+#scrollTopBtn:active {
+  background: var(--primary-darkest);
+}
 
 button,
 .button,
@@ -131,11 +143,9 @@ button:active,
   border-color: var(--secondary-active);
 }
 
-.burger-menu {
+#burgerMenu {
   display: none;
 }
-
-/* COMPONENT */
 
 .img {
   display: flex;
@@ -168,7 +178,7 @@ footer {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  background: #22264a;
+  background: var(--secondary-background);
 }
 
 header {
@@ -476,7 +486,7 @@ textarea {
   max-height: 200px;
 }
 
-@media (width <= 800px) {
+@media (width <= 768px) {
   h2 {
     text-align: center;
   }
@@ -484,17 +494,57 @@ textarea {
   footer {
     padding-inline: 20px;
   }
-  .burger-menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .burger-menu > i:active {
-    transform: rotate(90deg);
-    transition: 0.5s all;
-  }
+
   .nav-action {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+
+    width: 250px;
+    height: 100vh;
+
+    background: var(--secondary-background);
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.4s ease;
+    z-index: 1000;
+  }
+  .nav-action.active {
+    right: 0;
+  }
+
+  .nav-action nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-action a {
+    color: #fff;
+    font-size: 18px;
+  }
+
+  .nav-action button {
+    margin-top: 20px;
+  }
+
+  /* бургер */
+  #burgerMenu {
+    display: block;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  #burgerMenu > i {
+    font-size: 30px;
+    transition: 0.3s;
+  }
+
+  #burgerMenu > i.active {
+    transform: rotate(90deg);
   }
 
   section {

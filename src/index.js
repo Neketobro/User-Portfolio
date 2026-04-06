@@ -3,17 +3,62 @@ const cards = Array.from(document.querySelectorAll(".carousel-card"));
 const nextBtn = document.querySelector("[data-next-btn]");
 const prevBtn = document.querySelector("[data-prev-btn]");
 const dotsContainer = document.querySelector(".progress-carousel");
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+const burgerMenu = document.getElementById("burgerMenu");
+const navMenu = document.getElementById("navMenu");
+const icon = burgerMenu.querySelector("i");
+const navLinks = navMenu.querySelectorAll("a");
 
 let index = 0;
 let cardWidth = 0;
 let isAnimating = false;
 
-function setupInfinite() {
-  const clonesBefore = cards.map(card => card.cloneNode(true));
-  const clonesAfter = cards.map(card => card.cloneNode(true));
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 800) {
+    scrollTopBtn.classList.add("show");
+  } else {
+    scrollTopBtn.classList.remove("show");
+  }
+});
 
-  clonesBefore.forEach(clone => track.prepend(clone));
-  clonesAfter.forEach(clone => track.append(clone));
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+burgerMenu.addEventListener("click", (e) => {
+  e.stopPropagation();
+  navMenu.classList.toggle("active");
+  icon.classList.toggle("active");
+});
+
+navLinks.forEach(link => {
+  link.addEventListener("click", closeMenu);
+});
+
+document.addEventListener("click", (e) => {
+  const isClickInsideMenu = navMenu.contains(e.target);
+  const isClickOnBurger = burgerMenu.contains(e.target);
+
+  if (!isClickInsideMenu && !isClickOnBurger) {
+    closeMenu();
+  }
+});
+
+
+function closeMenu() {
+  navMenu.classList.remove("active");
+  icon.classList.remove("active");
+}
+
+function setupInfinite() {
+  const clonesBefore = cards.map((card) => card.cloneNode(true));
+  const clonesAfter = cards.map((card) => card.cloneNode(true));
+
+  clonesBefore.forEach((clone) => track.prepend(clone));
+  clonesAfter.forEach((clone) => track.append(clone));
 }
 
 function updateSizes() {
@@ -26,7 +71,8 @@ function updateSizes() {
 }
 
 function moveTo(i, animate = true) {
-  const visibleCenterOffset = (track.parentElement.offsetWidth / 2) - (cardWidth / 2);
+  const visibleCenterOffset =
+    track.parentElement.offsetWidth / 2 - cardWidth / 2;
 
   if (animate) {
     track.style.transition = "transform 0.4s ease";
@@ -42,9 +88,10 @@ function moveTo(i, animate = true) {
 
 function updateActive() {
   const allCards = document.querySelectorAll(".carousel-card");
-  const wrappedIndex = ((index % allCards.length) + allCards.length) % allCards.length;
+  const wrappedIndex =
+    ((index % allCards.length) + allCards.length) % allCards.length;
 
-  allCards.forEach(card => card.classList.remove("active"));
+  allCards.forEach((card) => card.classList.remove("active"));
 
   const active = allCards[wrappedIndex];
   if (active) active.classList.add("active");
@@ -104,9 +151,10 @@ function createDots() {
 
 function updateDots() {
   const dots = document.querySelectorAll(".progress-dot");
-  const realIndex = ((index - cards.length) % cards.length + cards.length) % cards.length;
+  const realIndex =
+    (((index - cards.length) % cards.length) + cards.length) % cards.length;
 
-  dots.forEach(dot => dot.classList.remove("active"));
+  dots.forEach((dot) => dot.classList.remove("active"));
   if (dots[realIndex]) dots[realIndex].classList.add("active");
 }
 
