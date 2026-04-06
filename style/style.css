@@ -79,17 +79,45 @@ button,
   padding: 10px;
   border-radius: 5px;
   font-size: 18px;
-  transition: 0.2s;
+  transition: all 0.2s;
   cursor: pointer;
   text-align: center;
 }
 button:hover,
-.button:hover {
-  background: var(--primary-darkest);
-}
+.button:hover,
 button:active,
 .button:active {
-  scale: 0.98;
+  background: var(--primary-darkest);
+}
+
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: 1px solid var(--secondary);
+  border-radius: 5px;
+  color: var(--secondary);
+  transform: scale(1);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.icon-button > i {
+  font-size: 28px;
+}
+
+.icon-button:hover,
+.icon-button:active {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+.icon-button:active,
+button:active,
+.button:active,
+.button-secondary:active {
+  transform: scale(0.98);
 }
 
 .button-secondary {
@@ -386,20 +414,32 @@ section {
 }
 
 .contact-wrapper {
+  width: 100%;
   display: flex;
-  align-items: flex-start;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   flex-wrap: wrap-reverse;
-  gap: 100px;
+  gap: 50px;
 }
 
-.contact-wrapper>div {
-  width: 30vw;
+.contact-wrapper > div {
+  width: 35vw;
   min-width: 350px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  gap: 20px;
+}
+.contact-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-icons > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -408,23 +448,32 @@ form {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 20px;
 }
 
-input, textarea{
-  width: 350px;
-  padding: 15px;
-  max-height: 200px;
-  min-height: 50px;
+label {
+  margin-bottom: 10px;
+}
+
+input,
+textarea {
+  min-width: 350px;
+  width: 30vw;
   height: 50px;
+  margin-bottom: 20px;
+  padding: 15px;
   border: 2px solid var(--secondary);
   background: transparent;
   border-radius: 5px;
   color: var(--color);
   font-family: sans-serif;
   font-size: 14px;
+}
 
+textarea {
   resize: vertical;
+  height: 100px;
+  min-height: 50px;
+  max-height: 200px;
 }
 
 @media (width <= 800px) {
@@ -495,7 +544,7 @@ input, textarea{
   .portfolio-item {
     gap: 20px;
   }
-  .contact-wrapper>div {
+  .contact-wrapper {
     align-items: center;
   }
 }
