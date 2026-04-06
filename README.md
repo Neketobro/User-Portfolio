@@ -1,110 +1,61 @@
-# Технічне завдання (ТЗ) – Проект “Портфоліо користувача”
+# HERO
 
-## 1. Мета проекту
+Створюю масштабовані веб-застосунки з продуманою структурою, чистим кодом та логічною архітектурою. Працюю на перетині UI, бізнес-логіки та серверної інтеграції.
 
-Створити односторінковий сайт-портфоліо користувача, який демонструє інформацію про себе, свої навички та контакти. Проект має бути адаптивним для мобільних і десктопних пристроїв.
+## ABOUT
 
-## 2. Структура сторінки
+Я Frontend-розробник із системним технічним мисленням та практичним досвідом побудови повноцінних SPA-застосунків.
 
-2.1 Header
-- Логотип (текст або зображення).
-- Навігація з посиланнями на секції: Home, About, Skills, Portfolio, Contact.
-- При натисканні на посилання – плавний скрол до відповідного розділу.
+Спеціалізуюся на React-екосистемі: розробка компонентної архітектури, управління станом, авторизація через JWT, інтеграція REST API, оптимізація ререндерів та структурування проектів.
 
-2.2 Hero секція (Home)
-- Великий заголовок: “Привіт, я [Ім’я]”.
-- Короткий опис / слоган.
-- Кнопка “Дізнатися більше” → скрол до About.
+Маю досвід побудови міні-соціальної мережі з системою підписок, авторизацією та серверною логікою на Node.js із збереженням даних у JSON. Працюю з WebSocket-з’єднаннями для реалізації реального часу.
 
-2.3 About
-- Фото користувача.
-- Короткий опис: хто ти, чим займаєшся.
-- Список ключових навичок (можна у вигляді прогрес-барів або іконок).
+Мій бекграунд поза IT (автомеханіка та технічний ремонт) сформував у мені глибоке розуміння системності: будь-яка складна система — це набір логічно пов’язаних компонентів. Саме цей підхід я застосовую в розробці.
 
-2.4 Skills
-- Перелік основних технологій/інструментів: HTML, CSS, JS, React (за бажанням), Git.
-- Можна зробити у вигляді карток або прогрес-барів.
+Я фокусуюся на:
 
-2.5 Portfolio
-- Галерея проектів (мінімум 3).
-- Для кожного проекту:
-- Назва.
-- Короткий опис.
-- Посилання на проект (реальний чи тестовий).
+- масштабованій структурі проекту
+- підтримуваності коду
+- оптимізації продуктивності
+- чистій логіці без “хаосу”
 
-2.6 Contact
+Моя мета — розвиватися у напрямку Fullstack, поєднуючи глибоку frontend-експертизу з серверною архітектурою.
 
-Форма з полями:
-- Ім’я
-- Email
-- Повідомлення
-- Кнопка “Відправити” (без серверної логіки, просто alert на JS)
+# HERO
 
-Контактна інформація:
-- Email
-- Телефон (якщо потрібно)
-- Соцмережі (LinkedIn, GitHub)
+I build scalable web applications with clean architecture, structured logic, and a strong focus on maintainability. I work at the intersection of UI, business logic, and backend integration.
 
-2.7 Footer
-- Авторські права.
-- Соцмережі (іконки).
-- Посилання на повернення на початок сторінки.
+## ABOUT
 
-## 3. Технічні вимоги
+I am a Frontend Developer with a системatic technical mindset and hands-on experience building full-featured SPA applications.
 
-3.1 HTML
-Використати семантичні теги:
+My core expertise lies within the React ecosystem: component-driven architecture, state management, JWT-based authentication, REST API integration, performance optimization, and structured project organization.
 
-```html
-<header>
-  <nav>
-    <section>
-      <footer></footer>
-    </section>
-  </nav>
-</header>
-```
+I have built a mini social network application featuring authentication, user subscriptions, and backend logic implemented with Node.js and JSON-based data storage. I also implemented real-time communication using WebSocket connections.
 
-- Структура чиста і зрозуміла.
-- Атрибути: alt для зображень, href для посилань.
+Before transitioning into IT, I worked in automotive mechanics and technical repair. This background shaped my analytical and системatic approach: every complex system can be broken down into logical components. I apply the same principle in software development.
 
-3.2 CSS
-- Використати Flexbox або Grid для верстки.
-- Адаптивний дизайн:
-- Мобільна версія (до 768px)
-- Планшет / десктоп
-- Кольори: 2–3 базові кольори, контрастні для тексту та фону.
-- Шрифти: Google Fonts.
-- Hover-ефекти для кнопок і посилань.
+I focus on:
 
-3.3 JS (базовий)
-- Плавний скрол по сторінці.
-- Валідація форми: перевірка заповнення всіх полів.
-- Alert при відправці форми.
-- Можна додати просту анімацію при прокрутці (fade-in).
+- scalable architecture
+- maintainable codebase
+- performance optimization
+- clean and predictable logic
 
-3.4 Assets
-- Зображення користувача (jpg/png).
-- Іконки (svg або font-awesome).
-- Фавікон.
+My long-term goal is to grow as a Fullstack Developer, combining strong frontend expertise with solid backend architecture knowledge
 
-## 4. Структура папок проекту
+## SKILLS
 
-```js
-/project-root
-  /assets
-    /images
-    /icons
-  /css
-    style.css
-  /js
-    script.js
-  index.html
-```
+### Frontend
 
-## 5. Додаткові побажання
+- HTML5 (семантична розмітка)
+- CSS3 (Flexbox, Grid, адаптивна верстка)
+- JavaScript (ES6+)
+- React (Hooks, Context API)
+- Node JS
+- NPM
 
-- Дизайн – мінімалістичний.
-- Код чистий, відступи 2 пробіли.
-- Коментарі в HTML/CSS/JS для пояснення блоків.
-- Можна зробити просту тему “світла/темна” за бажанням.
+### Інструменти
+
+- Git / GitHub
+- Figma
